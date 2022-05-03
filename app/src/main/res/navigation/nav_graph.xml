@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.finalproject.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_eventListFragment"
+            app:destination="@id/eventListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventListFragment"
+        android:name="com.example.finalproject.EventListFragment"
+        android:label="fragment_event_list"
+        tools:layout="@layout/fragment_event_list" >
+        <action
+            android:id="@+id/action_eventListFragment_to_eventResourcesFragment"
+            app:destination="@id/eventResourcesFragment" />
+        <action
+            android:id="@+id/action_eventListFragment_to_generalInfoFragment"
+            app:destination="@id/generalInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventResourcesFragment"
+        android:name="com.example.finalproject.EventResourcesFragment"
+        android:label="fragment_event_resources"
+        tools:layout="@layout/fragment_event_resources" >
+        <action
+            android:id="@+id/action_eventResourcesFragment_to_eventStudyMaterialsFragment"
+            app:destination="@id/eventStudyMaterialsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/generalInfoFragment"
+        android:name="com.example.finalproject.GeneralInfoFragment"
+        android:label="fragment_general_info"
+        tools:layout="@layout/fragment_general_info" />
+    <fragment
+        android:id="@+id/eventStudyMaterialsFragment"
+        android:name="com.example.finalproject.EventStudyMaterialsFragment"
+        android:label="fragment_event_study_materials"
+        tools:layout="@layout/fragment_event_study_materials" />
+</navigation>
