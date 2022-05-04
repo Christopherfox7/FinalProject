@@ -1,5 +1,6 @@
 package com.example.finalproject
 
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,6 +15,8 @@ class WelcomeFragment : Fragment() {
     private var _binding: FragmentWelcomeBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var pictureAnimation: AnimationDrawable
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,6 +27,8 @@ class WelcomeFragment : Fragment() {
         binding.startAppButton.setOnClickListener {
             rootView.findNavController().navigate(R.id.action_welcomeFragment_to_eventListFragment)
         }
+
+
 
         return binding.root
     }
