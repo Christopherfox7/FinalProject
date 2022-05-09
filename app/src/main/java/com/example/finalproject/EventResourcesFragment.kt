@@ -6,11 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.finalproject.databinding.FragmentEventResourcesBinding
+import androidx.fragment.app.viewModels
 
 
 class EventResourcesFragment : Fragment() {
 
-
+    private val viewModel: EventViewModel by viewModels()
     private var _binding: FragmentEventResourcesBinding? = null
     private val binding get() = _binding!!
 
