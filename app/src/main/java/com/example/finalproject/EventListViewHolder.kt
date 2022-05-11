@@ -15,9 +15,14 @@ class EventListViewHolder(val binding: ListItemLayoutBinding): RecyclerView.View
        //     currentEvent = event
 
             binding.button.text = event
+            var name: String = binding.button.text.toString()
 
             binding.button.setOnClickListener {
-                binding.root.findNavController().navigate(R.id.action_eventListFragment_to_eventResourcesFragment)
+         //       binding.root.findNavController().navigate(R.id.action_eventListFragment_to_eventResourcesFragment)
+                val action = EventListFragmentDirections.actionEventListFragmentToEventResourcesFragment(name)
+                binding.root.findNavController().navigate(action)
+
+
             }
         }
 }

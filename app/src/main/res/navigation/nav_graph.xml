@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_eventResourcesFragment_to_eventStudyMaterialsFragment"
             app:destination="@id/eventStudyMaterialsFragment" />
+        <argument
+            android:name="eventName"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/generalInfoFragment"

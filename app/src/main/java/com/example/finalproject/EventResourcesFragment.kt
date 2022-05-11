@@ -21,6 +21,10 @@ class EventResourcesFragment : Fragment() {
     ): View? {
         _binding = FragmentEventResourcesBinding.inflate(inflater, container, false)
 
+        val args = EventResourcesFragmentArgs.fromBundle(requireArguments())
+        binding.nameOfEvent.text = args.eventName
+
+       viewModel.changeName(args.eventName)
 
         return binding.root
     }
