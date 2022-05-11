@@ -4,21 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/event_list_fragment"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:paddingStart="4dp"
     android:paddingLeft="4dp"
-    android:paddingTop="8dp"
-    android:paddingBottom="4dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="10dp"
     tools:context=".EventListFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
 
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/extraInfoButton"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/extraInfoButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,13 +29,14 @@
     <Button
 
         android:id="@+id/extraInfoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="135dp"
+        android:layout_height="110dp"
+        android:paddingBottom="10dp"
         android:text="Additional Info About Science Olympiad"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintStart_toEndOf="@+id/recyclerView"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

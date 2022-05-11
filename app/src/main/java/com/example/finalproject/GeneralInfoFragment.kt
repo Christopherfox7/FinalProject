@@ -22,6 +22,8 @@ class GeneralInfoFragment : Fragment() {
     ): View? {
         _binding = FragmentGeneralInfoBinding.inflate(inflater, container, false)
 
+
+
         binding.websiteButton.setOnClickListener { openWebPage("https://www.soinc.org/code-ethics-general-rules") }
 
 

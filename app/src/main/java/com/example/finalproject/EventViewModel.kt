@@ -68,7 +68,7 @@ class EventViewModel: ViewModel() {
             _eventRulesLink.value = "https://www.soinc.org/ornithology-c"
         }
         else if((eventTitle.value?:0).equals("Ping-Pong Parachute")){
-            _eventRulesLink.value = ""
+            _eventRulesLink.value = "https://www.soinc.org/ping-pong-parachute-c"
         }
         else if((eventTitle.value?:0).equals("Remote Sensing")){
             _eventRulesLink.value = "https://www.soinc.org/remote-sensing-c"
@@ -83,7 +83,7 @@ class EventViewModel: ViewModel() {
             _eventRulesLink.value = "https://www.soinc.org/wifi-lab-c"
         }
         else if((eventTitle.value?:0).equals("Write It Do It")){
-            _eventRulesLink.value = ""
+            _eventRulesLink.value = "https://www.soinc.org/write-it-do-it-c"
         }
 
         else if((eventTitle.value?:0).equals("Wright Stuff")){

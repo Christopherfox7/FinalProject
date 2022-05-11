@@ -1,5 +1,7 @@
 package com.example.finalproject
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -26,9 +28,19 @@ class EventResourcesFragment : Fragment() {
 
        viewModel.changeName(args.eventName)
 
+        viewModel.addLink()
+
+        binding.eventRulesButton.setOnClickListener { openRulesPage(viewModel.eventRulesLink.value.toString()) }
+
         return binding.root
     }
+    fun openRulesPage(url: String) {
+        val webpage: Uri = Uri.parse(url)
+        val intent = Intent(Intent.ACTION_VIEW, webpage)
 
+        startActivity(intent)
+
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
