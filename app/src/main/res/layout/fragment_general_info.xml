@@ -17,4 +17,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/teamButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team Information"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/websiteButton" />
+
+    <TextView
+        android:id="@+id/teamInfoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="stuff"
+        app:layout_constraintBottom_toTopOf="@+id/teamButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/websiteButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

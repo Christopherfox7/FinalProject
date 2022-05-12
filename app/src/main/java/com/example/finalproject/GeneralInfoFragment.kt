@@ -26,7 +26,7 @@ class GeneralInfoFragment : Fragment() {
 
         binding.websiteButton.setOnClickListener { openWebPage("https://www.soinc.org/code-ethics-general-rules") }
 
-
+        binding.teamButton.setOnClickListener { openWebPage("https://www.soinc.org/start-team/organizing-team#:~:text=A%20Science%20Olympiad%20team%20is,same%20understanding%20of%20the%20rules.") }
 
         return binding.root
     }
