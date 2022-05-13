@@ -15,6 +15,11 @@ class EventViewModel: ViewModel() {
         get() = _eventRulesLink
 
 
+    private val _eventAboutInfo = MutableLiveData("")
+    val eventAboutInfo: LiveData<String>
+        get() = _eventAboutInfo
+
+
     fun changeName(name: String){
       _eventTitle.value = name
     }

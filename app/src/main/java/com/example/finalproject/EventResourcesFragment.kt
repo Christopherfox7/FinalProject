@@ -32,6 +32,10 @@ class EventResourcesFragment : Fragment() {
 
         binding.eventRulesButton.setOnClickListener { openRulesPage(viewModel.eventRulesLink.value.toString()) }
 
+        binding.aboutEventRadioButton.setOnClickListener{editEventText()}
+
+        binding.eventRulesRadioButton.setOnClickListener{editEventText()}
+
         return binding.root
     }
     fun openRulesPage(url: String) {
@@ -39,6 +43,10 @@ class EventResourcesFragment : Fragment() {
         val intent = Intent(Intent.ACTION_VIEW, webpage)
 
         startActivity(intent)
+
+    }
+
+    fun editEventText(){
 
     }
     override fun onDestroyView() {
