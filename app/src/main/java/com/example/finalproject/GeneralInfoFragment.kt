@@ -22,7 +22,7 @@ class GeneralInfoFragment : Fragment() {
     ): View? {
         _binding = FragmentGeneralInfoBinding.inflate(inflater, container, false)
 
-
+        binding.phoneButton.setOnClickListener { dialPhoneNumber("01244951200") }
 
         binding.websiteButton.setOnClickListener { openWebPage("https://www.soinc.org/code-ethics-general-rules") }
 
@@ -37,6 +37,27 @@ class GeneralInfoFragment : Fragment() {
         startActivity(intent)
 
     }
+    fun dialPhoneNumber(phoneNumber: String) {
+        val intent = Intent(Intent.ACTION_DIAL).apply {
+            data = Uri.parse("tel:$phoneNumber")
+        }
+        startActivity(intent)
+
+    }
+
+    fun composeEmail(addresses: String, subject: String) {
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:")
+            putExtra(Intent.EXTRA_EMAIL, addresses)
+            putExtra(Intent.EXTRA_SUBJECT, subject)
+
+        }
+        //        binding.emailButton.setOnClickListener{composeEmail("info@sofworld.org", "text")}
+        //  if (intent.resolveActivity(packageManager) != null) {
+        startActivity(intent)
+        //  }
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

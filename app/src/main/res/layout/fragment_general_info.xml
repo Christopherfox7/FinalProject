@@ -27,14 +27,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/websiteButton" />
 
-    <TextView
-        android:id="@+id/teamInfoText"
+    <Button
+        android:id="@+id/phoneButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="stuff"
-        app:layout_constraintBottom_toTopOf="@+id/teamButton"
+        android:text="Call HQ"
+        app:layout_constraintBottom_toTopOf="@+id/websiteButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/websiteButton" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
