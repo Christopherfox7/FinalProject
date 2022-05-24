@@ -35,6 +35,10 @@ class EventListFragment : Fragment() {
 
         }
 
+        binding.buttonToQuestionare.setOnClickListener {
+            rootView.findNavController().navigate(R.id.action_eventListFragment_to_questionareFragment)
+        }
+
         return binding.root
     }
 

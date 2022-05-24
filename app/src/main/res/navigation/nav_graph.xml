@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_eventListFragment_to_generalInfoFragment"
             app:destination="@id/generalInfoFragment" />
+        <action
+            android:id="@+id/action_eventListFragment_to_questionareFragment"
+            app:destination="@id/questionareFragment" />
     </fragment>
     <fragment
         android:id="@+id/eventResourcesFragment"
@@ -48,4 +51,9 @@
         android:name="com.example.finalproject.EventStudyMaterialsFragment"
         android:label="fragment_event_study_materials"
         tools:layout="@layout/fragment_event_study_materials" />
+    <fragment
+        android:id="@+id/questionareFragment"
+        android:name="com.example.finalproject.QuestionareFragment"
+        android:label="fragment_questionare"
+        tools:layout="@layout/fragment_questionare" />
 </navigation>
