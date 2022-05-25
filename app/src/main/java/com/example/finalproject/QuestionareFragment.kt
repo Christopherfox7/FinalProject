@@ -14,6 +14,8 @@ class QuestionareFragment : Fragment() {
     private var _binding: FragmentQuestionareBinding? = null
     private val binding get() = _binding!!
     private val viewModel: QuestionareViewModel by viewModels()
+    private var index = 0
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +31,29 @@ class QuestionareFragment : Fragment() {
             rootView.findNavController().navigateUp()
         }
 
+        binding.trueButton.setOnClickListener {
+            viewModel.updateQuestion(1)
 
+        }
+
+        binding.falseButton.setOnClickListener {
+            viewModel.updateQuestion(-1)
+
+        }
+         if(index==6){
+            binding.nextQuestionButton.text = "Finish Questionnaire"
+
+        }
+
+            binding.nextQuestionButton.setOnClickListener {
+                if(index<6) {
+                viewModel.updateQuestionText(questions[index])
+                index++
+
+                binding.questionText.text = viewModel.questionText.value
+            }
+
+        }
 
         return rootView
     }
