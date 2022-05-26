@@ -41,7 +41,7 @@ class QuestionareFragment : Fragment() {
             viewModel.updateQuestion(-1)
 
         }
-         if(index==6){
+         if(index==7){
             binding.nextQuestionButton.text = "Finish Questionnaire"
 
         }
@@ -52,7 +52,15 @@ class QuestionareFragment : Fragment() {
                 index++
 
                 binding.questionText.text = viewModel.questionText.value
+                    if(index==7){
+                    binding.nextQuestionButton.text = "Finish Questionnaire"
+                    index++
+                }
             }
+                if(index==8){
+                binding.questionText.text = viewModel.eventResults.value
+            }
+
 
         }
 
