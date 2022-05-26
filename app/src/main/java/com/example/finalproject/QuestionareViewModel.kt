@@ -18,6 +18,10 @@ class QuestionareViewModel: ViewModel() {
     val results: LiveData<Int>
         get() = _results
 
+    private val _eventResults = MutableLiveData("")
+    val eventResults : LiveData<String>
+        get() = _eventResults
+
 
     fun updateQuestion(answer: Int){
         _questionNumber.value = _questionNumber.value?.plus(1)
@@ -40,6 +44,9 @@ class QuestionareViewModel: ViewModel() {
         else if(answer==1 && questionNumber.value==6){
             _results.value = _results.value?.plus(6)
         }
+        else if(answer==1 && questionNumber.value==7){
+            _results.value = _results.value?.plus(7)
+        }
     }
 
     fun updateQuestionText(question: String){
@@ -47,6 +54,18 @@ class QuestionareViewModel: ViewModel() {
 
     }
 
+
+    fun questionareResults(){
+        if(questionNumber.value!! <= 4){
+            _eventResults.value = "Chem Lab, Cell Biology, Environmental Chemistry, Green Generation"
+        }
+        else if(questionNumber.value!! <= 8){
+            _eventResults.value = "Chem Lab, Cell Biology, Disease Detectives, Environmental Chemistry, Green Generation"
+        }
+        else if(questionNumber.value!! <= 8){
+            _eventResults.value = "Chem Lab, Cell Biology, Disease Detectives, Environmental Chemistry, Green Generation"
+        }
+    }
 
 }
 

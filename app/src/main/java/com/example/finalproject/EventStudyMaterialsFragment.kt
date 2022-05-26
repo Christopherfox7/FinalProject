@@ -5,11 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.finalproject.databinding.FragmentEventResourcesBinding
-import com.example.finalproject.databinding.FragmentEventStudyMaterialsBinding
 import android.media.AudioAttributes
 import android.media.SoundPool
-
+import com.example.finalproject.databinding.FragmentEventStudyMaterialsBinding
 
 class EventStudyMaterialsFragment : Fragment() {
 

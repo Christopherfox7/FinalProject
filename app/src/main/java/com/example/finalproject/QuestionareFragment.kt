@@ -25,7 +25,8 @@ class QuestionareFragment : Fragment() {
         _binding = FragmentQuestionareBinding.inflate(inflater, container, false)
         val rootView = binding.root
 
-        val questions = listOf<String>("Do you like topics of Chemistry?","Do you like Environmental Sciences?","Do you like topics of physics?","Do you like to work hands on more than studying information?","Do you like topics of biology?","Do you want to participate in an event that will challenge you with new and unique concepts?")
+        val questions = listOf<String>("Do you like topics of Chemistry?","Do you like Environmental Sciences?","Do you like topics of biology?","Do you like topics of physics?",
+            "Do you like to work hands on more than studying information?","Do you want to participate in an event that will challenge you with new and unique concepts?","Do you like working a lot with others?")
 
         binding.backToMenuButton.setOnClickListener {
             rootView.findNavController().navigateUp()
@@ -46,7 +47,7 @@ class QuestionareFragment : Fragment() {
         }
 
             binding.nextQuestionButton.setOnClickListener {
-                if(index<6) {
+                if(index<7) {
                 viewModel.updateQuestionText(questions[index])
                 index++
 
