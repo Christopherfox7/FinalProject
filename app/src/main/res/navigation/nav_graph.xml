@@ -50,7 +50,11 @@
         android:id="@+id/eventStudyMaterialsFragment"
         android:name="com.example.finalproject.EventStudyMaterialsFragment"
         android:label="fragment_event_study_materials"
-        tools:layout="@layout/fragment_event_study_materials" />
+        tools:layout="@layout/fragment_event_study_materials" >
+        <argument
+            android:name="eventtitle"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/questionareFragment"
         android:name="com.example.finalproject.QuestionareFragment"

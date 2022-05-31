@@ -9,7 +9,8 @@
     android:paddingLeft="4dp"
     android:paddingTop="4dp"
     android:paddingBottom="10dp"
-    tools:context=".EventListFragment">
+    tools:context=".EventListFragment"
+    >
 
 
     <androidx.recyclerview.widget.RecyclerView

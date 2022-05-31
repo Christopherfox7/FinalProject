@@ -22,7 +22,9 @@ class GeneralInfoFragment : Fragment() {
     ): View? {
         _binding = FragmentGeneralInfoBinding.inflate(inflater, container, false)
 
-        binding.phoneButton.setOnClickListener { dialPhoneNumber("01244951200") }
+        binding.phoneButton.setOnClickListener { dialPhoneNumber("6307921251") }
+
+        binding.emailButton.setOnClickListener{composeEmail("mmkoch@soince.org","Science Olympiad")}
 
         binding.websiteButton.setOnClickListener { openWebPage("https://www.soinc.org/code-ethics-general-rules") }
 

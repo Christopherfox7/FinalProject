@@ -38,6 +38,8 @@ class WelcomeFragment : Fragment() {
 
         binding.animationLayout.startAnimation(AnimationUtils.loadAnimation(this.context, androidx.appcompat.R.anim.abc_shrink_fade_out_from_bottom))
 
+        binding.fullLayout.startAnimation(AnimationUtils.loadAnimation(this.context, androidx.appcompat.R.anim.abc_slide_out_top))
+
         var audioAttributes = AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_MEDIA).setContentType(AudioAttributes.CONTENT_TYPE_MUSIC).build()
 
         soundPool = SoundPool.Builder().setMaxStreams(6).setAudioAttributes(audioAttributes).build()
@@ -55,7 +57,7 @@ class WelcomeFragment : Fragment() {
 
 
         binding.startAppButton.setOnClickListener {
-            binding.fullLayout.startAnimation(AnimationUtils.loadAnimation(this.context, androidx.appcompat.R.anim.abc_shrink_fade_out_from_bottom))
+
            rootView.findNavController().navigate(R.id.action_welcomeFragment_to_eventListFragment)
         }
 
@@ -78,7 +80,7 @@ class WelcomeFragment : Fragment() {
             }
             else{
                 soundPool?.stop(grosbeakSound)
-
+                x--
             }
 
         }

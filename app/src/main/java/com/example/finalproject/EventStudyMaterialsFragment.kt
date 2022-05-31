@@ -7,9 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.media.AudioAttributes
 import android.media.SoundPool
+import androidx.fragment.app.viewModels
 import com.example.finalproject.databinding.FragmentEventStudyMaterialsBinding
 
 class EventStudyMaterialsFragment : Fragment() {
+
+    private val viewModel: EventViewModel by viewModels()
+
 
     private var _binding: FragmentEventStudyMaterialsBinding? = null
     private val binding get() = _binding!!
@@ -24,13 +28,17 @@ class EventStudyMaterialsFragment : Fragment() {
     ): View? {
         _binding = FragmentEventStudyMaterialsBinding.inflate(inflater, container, false)
 
+        val args = EventStudyMaterialsFragmentArgs.fromBundle(requireArguments())
+
+
+        viewModel.changeName(args.eventtitle)
 
 
         var audioAttributes = AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_MEDIA).setContentType(AudioAttributes.CONTENT_TYPE_MUSIC).build()
 
         soundPool = SoundPool.Builder().setMaxStreams(6).setAudioAttributes(audioAttributes).build()
 
-
+        binding.startAppButton.setOnClickListener { binding.eventRules.text = viewModel.eventTitle.value.toString() }
 
 
         var grosbeakSound = soundPool!!.load(this.context, R.raw.grosbeak,1)

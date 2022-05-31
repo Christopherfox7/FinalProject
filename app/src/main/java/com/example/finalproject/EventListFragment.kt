@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.navigation.findNavController
 import com.example.finalproject.databinding.FragmentEventListBinding
 
@@ -22,10 +23,11 @@ class EventListFragment : Fragment() {
         _binding = FragmentEventListBinding.inflate(inflater, container, false)
         val rootView = binding.root
 
+        binding.eventListFragment.startAnimation(AnimationUtils.loadAnimation(this.context, androidx.appcompat.R.anim.abc_slide_out_top))
 
         val events = listOf<String>("Anatomy and Physiology", "Astronomy", "Bridge", "Cell Biology", "Chem Lab","Codebusters", "Detector Building",
-            "Disease Detectives", "Dynamic Planet", "Environmental Chemistry","Experimental Design", "Forensics", "Gravity Vehicle", "Green Generation", "It's About Time",
-            "Ornithology", "Ping-Pong Parachute", "Remote Sensing", "Rocks and Minerals", "Trajectory", "Wifi Lab","Write It Do It", "Wright Stuff")
+            "Disease Detectives", "Dynamic Planet", "Environmental Chemistry", "Gravity Vehicle", "Green Generation", "It's About Time",
+            "Ornithology", "Ping-Pong Parachute", "Remote Sensing", "Rocks and Minerals", "Trajectory", "Wifi Lab")
 
         val mAdapter = EventListAdapter(events)
         binding.recyclerView.adapter = mAdapter

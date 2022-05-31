@@ -7,8 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import com.example.finalproject.databinding.FragmentEventResourcesBinding
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 
 
 class EventResourcesFragment : Fragment() {
@@ -30,11 +33,45 @@ class EventResourcesFragment : Fragment() {
 
         viewModel.addLink()
 
+
+        if(viewModel.eventTitle.value.toString().equals("Astronomy")){
+            binding.toStudyFragmentButton.isVisible = isHidden
+        }
+        else if(viewModel.eventTitle.value.toString().equals("Anatomy and Physiology")){
+            binding.toStudyFragmentButton.isVisible = isHidden
+        }
+        else if(viewModel.eventTitle.value.toString().equals("Cell Biology")){
+            binding.toStudyFragmentButton.isVisible = isHidden
+        }
+        else if(viewModel.eventTitle.value.toString().equals("Chem Lab")){
+            binding.toStudyFragmentButton.isVisible = isHidden
+        }
+        else if(viewModel.eventTitle.value.toString().equals("Disease Detectives")){
+            binding.toStudyFragmentButton.isVisible = isHidden
+        }
+        else if(viewModel.eventTitle.value.toString().equals("Dynamic Planet")){
+            binding.toStudyFragmentButton.isVisible = isHidden
+        }
+        else if(viewModel.eventTitle.value.toString().equals("Environmental Chemistry")){
+            binding.toStudyFragmentButton.isVisible = isHidden
+        }
+        else if(viewModel.eventTitle.value.toString().equals("Green Generation")){
+            binding.toStudyFragmentButton.isVisible = isHidden
+        }
+        else if(viewModel.eventTitle.value.toString().equals("Remote Sensing")){
+            binding.toStudyFragmentButton.isVisible = isHidden
+        }
+        else if(viewModel.eventTitle.value.toString().equals("Rocks and Minerals")){
+            binding.toStudyFragmentButton.isVisible = isHidden
+        }
+
         binding.eventRulesButton.setOnClickListener { openRulesPage(viewModel.eventRulesLink.value.toString()) }
 
         binding.aboutEventRadioButton.setOnClickListener{editEventText()}
 
         binding.eventRulesRadioButton.setOnClickListener{editEventText()}
+
+        binding.toStudyFragmentButton.setOnClickListener{binding.root.findNavController().navigate(EventResourcesFragmentDirections.actionEventResourcesFragmentToEventStudyMaterialsFragment(viewModel.eventTitle.value.toString()))}
 
         return binding.root
     }

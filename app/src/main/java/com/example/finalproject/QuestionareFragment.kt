@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.example.finalproject.databinding.FragmentQuestionareBinding
@@ -14,7 +15,7 @@ class QuestionareFragment : Fragment() {
     private var _binding: FragmentQuestionareBinding? = null
     private val binding get() = _binding!!
     private val viewModel: QuestionareViewModel by viewModels()
-    private var index = 0
+    private var index = 1
 
 
     override fun onCreateView(
@@ -27,6 +28,8 @@ class QuestionareFragment : Fragment() {
 
         val questions = listOf<String>("Do you like topics of Chemistry?","Do you like Environmental Sciences?","Do you like topics of biology?","Do you like topics of physics?",
             "Do you like to work hands on more than studying information?","Do you want to participate in an event that will challenge you with new and unique concepts?","Do you like working a lot with others?")
+
+        binding.questionText.text = "Do you like topics of Chemistry?"
 
         binding.backToMenuButton.setOnClickListener {
             rootView.findNavController().navigateUp()
@@ -58,7 +61,9 @@ class QuestionareFragment : Fragment() {
                 }
             }
                 if(index==8){
+                    viewModel.questionareResults()
                 binding.questionText.text = viewModel.eventResults.value
+                    Toast.makeText(this.context,"Questionnaire Completed:\nThese are the best events for you based on your results.", Toast.LENGTH_SHORT).show()
             }
 
 
