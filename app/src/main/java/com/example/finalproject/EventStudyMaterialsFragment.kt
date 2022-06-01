@@ -51,17 +51,54 @@ class EventStudyMaterialsFragment : Fragment() {
         if(viewModel.infoPackage.value ==1){
             binding.imageView.setImageResource(R.drawable.bridgeone)
             binding.imageView2.setImageResource(R.drawable.bridge_two)
+            binding.eventText.text = "These are two sample bridges which are tested for strength based on how much sand they can hold until they break."
             binding.leftButton.isVisible = isHidden
-            binding.button4.isVisible = isHidden
+            binding.rightButton.isVisible = isHidden
             binding.startAppButton.isVisible = isHidden
         }
-        else if(viewModel.infoPackage.value ==4) {
+        else if(viewModel.infoPackage.value ==2){
+            binding.imageView.setImageResource(R.drawable.grav_one)
+            binding.imageView2.setImageResource(R.drawable.grav_two)
+            binding.eventText.text = "On top is an example vehicle that can be build and below is an example ramp that teams can build."
+            binding.leftButton.isVisible = isHidden
+            binding.rightButton.isVisible = isHidden
+            binding.startAppButton.isVisible = isHidden
+        }
+        else if(viewModel.infoPackage.value ==3) {
             binding.imageView.isVisible = isHidden
+            binding.eventText.text = "These are some example bird calls that participants may be tested on for identification purposes."
             binding.imageView2.isVisible = isHidden
             binding.leftButton.text = "Grosbeak"
             binding.leftButton.setOnClickListener { soundPool?.play(grosbeakSound, 1F, 1F, 1, 0, 1F) }
+            binding.startAppButton.text = "Robin"
+            binding.startAppButton.setOnClickListener { soundPool?.play(robinSound, 1F, 1F, 1, 0, 1F) }
+            binding.rightButton.text = "Yellow Throat"
+            binding.rightButton.setOnClickListener {soundPool?.play(yellowThroatSound, 1F, 1F, 1, 0, 1F)  }
         }
-
+        else if(viewModel.infoPackage.value ==4){
+            binding.imageView.setImageResource(R.drawable.ppp_one)
+            binding.eventText.text = "This image shows an example rocket and parachute that participants can build."
+            binding.imageView2.isVisible = isHidden
+            binding.leftButton.isVisible = isHidden
+            binding.rightButton.isVisible = isHidden
+            binding.startAppButton.isVisible = isHidden
+        }
+        else if(viewModel.infoPackage.value ==5){
+            binding.imageView.setImageResource(R.drawable.traj_one)
+            binding.imageView2.setImageResource(R.drawable.traj_two)
+            binding.eventText.text = "The top image shows an example catapult launcher and the bottom shows an example slingshot launcher."
+            binding.leftButton.isVisible = isHidden
+            binding.rightButton.isVisible = isHidden
+            binding.startAppButton.isVisible = isHidden
+        }
+        else if(viewModel.infoPackage.value ==6){
+            binding.imageView.setImageResource(R.drawable.wifi_one)
+            binding.imageView2.setImageResource(R.drawable.wifi_two)
+            binding.eventText.text = "On top is an image of the electromagnetic spectrum an important part of the event text and the bottom shows parts that can be used in the construction of an antenna."
+            binding.leftButton.isVisible = isHidden
+            binding.rightButton.isVisible = isHidden
+            binding.startAppButton.isVisible = isHidden
+        }
         return binding.root
     }
 

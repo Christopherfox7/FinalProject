@@ -145,24 +145,20 @@ class EventViewModel: ViewModel() {
         else if ((eventTitle.value ?: 0).equals("Gravity Vehicle")) {
             _infoPackage.value = 2
         }
-        else if ((eventTitle.value ?: 0).equals("It's About Time")) {
+        else if ((eventTitle.value ?: 0).equals("Ornithology")) {
             _infoPackage.value = 3
 
         }
-        else if ((eventTitle.value ?: 0).equals("Ornithology")) {
+        else if ((eventTitle.value ?: 0).equals("Ping-Pong Parachute")) {
             _infoPackage.value = 4
 
         }
-        else if ((eventTitle.value ?: 0).equals("Ping-Pong Parachute")) {
+        else if ((eventTitle.value ?: 0).equals("Trajectory")) {
             _infoPackage.value = 5
 
         }
-        else if ((eventTitle.value ?: 0).equals("Trajectory")) {
-            _infoPackage.value = 6
-
-        }
         else if ((eventTitle.value ?: 0).equals("Wifi Lab")) {
-            _infoPackage.value = 7
+            _infoPackage.value = 6
 
         }
 

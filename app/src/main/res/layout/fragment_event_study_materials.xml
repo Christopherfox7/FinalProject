@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="8dp"
     tools:context=".EventStudyMaterialsFragment">
 
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="74dp"
-        android:layout_height="69dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:src="@drawable/ic_baseline_science_24"
         app:layout_constraintBottom_toTopOf="@+id/startAppButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toBottomOf="@+id/eventText" />
 
     <Button
         android:id="@+id/startAppButton"
@@ -23,32 +25,32 @@
         android:layout_height="wrap_content"
         android:text="Start"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/rightButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/leftButton"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
         android:id="@+id/leftButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/startAppButton"
         app:layout_constraintEnd_toStartOf="@+id/startAppButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toTopOf="@+id/startAppButton" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/rightButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/startAppButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/startAppButton"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toTopOf="@+id/startAppButton" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -63,7 +65,7 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -72,6 +74,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:src="@drawable/sopic"
         app:layout_constraintBottom_toTopOf="@+id/eventText"
         app:layout_constraintEnd_toEndOf="parent"

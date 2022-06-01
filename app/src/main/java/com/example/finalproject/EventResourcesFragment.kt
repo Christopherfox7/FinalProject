@@ -61,6 +61,9 @@ class EventResourcesFragment : Fragment() {
         else if(viewModel.eventTitle.value.toString().equals("Green Generation")){
             binding.toStudyFragmentButton.isVisible = isHidden
         }
+        else if(viewModel.eventTitle.value.toString().equals("It's About Time")){
+            binding.toStudyFragmentButton.isVisible = isHidden
+        }
         else if(viewModel.eventTitle.value.toString().equals("Remote Sensing")){
             binding.toStudyFragmentButton.isVisible = isHidden
         }
