@@ -46,7 +46,7 @@ class EventResourcesFragment : Fragment() {
         else if(viewModel.eventTitle.value.toString().equals("Chem Lab")){
             binding.toStudyFragmentButton.isVisible = isHidden
         }
-        else if(viewModel.eventTitle.value.toString().equals("CodeBusters")){
+        else if(viewModel.eventTitle.value.toString().equals("Codebusters")){
             binding.toStudyFragmentButton.isVisible = isHidden
         }
         else if(viewModel.eventTitle.value.toString().equals("Detector Building")){

@@ -18,7 +18,6 @@ import com.example.finalproject.databinding.FragmentWelcomeBinding
 class WelcomeFragment : Fragment() {
 
     var soundPool: SoundPool? = null
-    var defaultCrySounds = listOf<Int>()
 
     private var _binding: FragmentWelcomeBinding? = null
     private val binding get() = _binding!!
@@ -27,7 +26,6 @@ class WelcomeFragment : Fragment() {
 
 
 
-    private lateinit var pictureAnimation: AnimationDrawable
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,9 +38,6 @@ class WelcomeFragment : Fragment() {
 
         binding.fullLayout.startAnimation(AnimationUtils.loadAnimation(this.context, androidx.appcompat.R.anim.abc_slide_out_top))
 
-        var audioAttributes = AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_MEDIA).setContentType(AudioAttributes.CONTENT_TYPE_MUSIC).build()
-
-        soundPool = SoundPool.Builder().setMaxStreams(6).setAudioAttributes(audioAttributes).build()
 
 //
 //        defaultCrySounds = listOf(
@@ -62,28 +57,6 @@ class WelcomeFragment : Fragment() {
         }
 
 
-        soundPool = SoundPool.Builder().setMaxStreams(6).setAudioAttributes(audioAttributes).build()
-
-
-
-
-    var grosbeakSound = soundPool!!.load(this.context, R.raw.grosbeak,1)
-        var robinSound = soundPool!!.load(this.context, R.raw.robinnoise,1)
-        var yellowThroatSound = soundPool!!.load(this.context, R.raw.yellowthroat,1)
-
-
-        var x =0
-        binding.button2.setOnClickListener {
-            if(x==0) {
-                soundPool?.play(grosbeakSound, 1F, 1F, 1, 0, 1F)
-                x++
-            }
-            else{
-                soundPool?.stop(grosbeakSound)
-                x--
-            }
-
-        }
 
 
         return binding.root

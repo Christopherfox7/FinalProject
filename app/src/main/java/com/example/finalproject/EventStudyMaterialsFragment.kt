@@ -41,7 +41,6 @@ class EventStudyMaterialsFragment : Fragment() {
 
         soundPool = SoundPool.Builder().setMaxStreams(6).setAudioAttributes(audioAttributes).build()
 
-     //   binding.startAppButton.setOnClickListener { binding.eventText.text = viewModel.eventTitle.value.toString() }
 
 
         var grosbeakSound = soundPool!!.load(this.context, R.raw.grosbeak, 1)
@@ -55,6 +54,7 @@ class EventStudyMaterialsFragment : Fragment() {
             binding.leftButton.isVisible = isHidden
             binding.rightButton.isVisible = isHidden
             binding.startAppButton.isVisible = isHidden
+            binding.stopButton.isVisible = isHidden
         }
         else if(viewModel.infoPackage.value ==2){
             binding.imageView.setImageResource(R.drawable.grav_one)
@@ -63,17 +63,17 @@ class EventStudyMaterialsFragment : Fragment() {
             binding.leftButton.isVisible = isHidden
             binding.rightButton.isVisible = isHidden
             binding.startAppButton.isVisible = isHidden
+            binding.stopButton.isVisible = isHidden
+
         }
         else if(viewModel.infoPackage.value ==3) {
             binding.imageView.isVisible = isHidden
             binding.eventText.text = "These are some example bird calls that participants may be tested on for identification purposes."
             binding.imageView2.isVisible = isHidden
             binding.leftButton.text = "Grosbeak"
-            binding.leftButton.setOnClickListener { soundPool?.play(grosbeakSound, 1F, 1F, 1, 0, 1F) }
+
             binding.startAppButton.text = "Robin"
-            binding.startAppButton.setOnClickListener { soundPool?.play(robinSound, 1F, 1F, 1, 0, 1F) }
             binding.rightButton.text = "Yellow Throat"
-            binding.rightButton.setOnClickListener {soundPool?.play(yellowThroatSound, 1F, 1F, 1, 0, 1F)  }
         }
         else if(viewModel.infoPackage.value ==4){
             binding.imageView.setImageResource(R.drawable.ppp_one)
@@ -82,6 +82,8 @@ class EventStudyMaterialsFragment : Fragment() {
             binding.leftButton.isVisible = isHidden
             binding.rightButton.isVisible = isHidden
             binding.startAppButton.isVisible = isHidden
+            binding.stopButton.isVisible = isHidden
+
         }
         else if(viewModel.infoPackage.value ==5){
             binding.imageView.setImageResource(R.drawable.traj_one)
@@ -90,6 +92,8 @@ class EventStudyMaterialsFragment : Fragment() {
             binding.leftButton.isVisible = isHidden
             binding.rightButton.isVisible = isHidden
             binding.startAppButton.isVisible = isHidden
+            binding.stopButton.isVisible = isHidden
+
         }
         else if(viewModel.infoPackage.value ==6){
             binding.imageView.setImageResource(R.drawable.wifi_one)
@@ -98,7 +102,22 @@ class EventStudyMaterialsFragment : Fragment() {
             binding.leftButton.isVisible = isHidden
             binding.rightButton.isVisible = isHidden
             binding.startAppButton.isVisible = isHidden
+            binding.stopButton.isVisible = isHidden
+
         }
+
+        binding.leftButton.setOnClickListener { soundPool?.play(grosbeakSound, 1F, 1F, 1, 0, 1F) }
+        binding.startAppButton.setOnClickListener { soundPool?.play(robinSound, 1F, 1F, 1, 0, 1F) }
+        binding.rightButton.setOnClickListener {soundPool?.play(yellowThroatSound, 1F, 1F, 1, 0, 1F) }
+
+            binding.stopButton.setOnClickListener {
+                soundPool?.stop(grosbeakSound)
+                soundPool?.stop(robinSound)
+                soundPool?.stop(yellowThroatSound)
+            }
+
+
+
         return binding.root
     }
 
