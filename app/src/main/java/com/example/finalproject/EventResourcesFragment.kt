@@ -46,7 +46,7 @@ class EventResourcesFragment : Fragment() {
         else if(viewModel.eventTitle.value.toString().equals("Chem Lab")){
             binding.toStudyFragmentButton.isVisible = isHidden
         }
-        else if(viewModel.eventTitle.value.toString().equals("Disease Detectives")){
+        else if(viewModel.eventTitle.value.toString().equals("Detector Building")){
             binding.toStudyFragmentButton.isVisible = isHidden
         }
         else if(viewModel.eventTitle.value.toString().equals("Dynamic Planet")){
@@ -64,6 +64,9 @@ class EventResourcesFragment : Fragment() {
         else if(viewModel.eventTitle.value.toString().equals("Rocks and Minerals")){
             binding.toStudyFragmentButton.isVisible = isHidden
         }
+        viewModel.eventInfoPack()
+
+        binding.eventInfoTextView.text = viewModel.eventAboutInfo.value.toString()
 
         binding.eventRulesButton.setOnClickListener { openRulesPage(viewModel.eventRulesLink.value.toString()) }
 

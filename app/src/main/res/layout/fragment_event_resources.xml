@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".EventResourcesFragment">
 
     <TextView
@@ -10,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Event Name"
-        app:layout_constraintBottom_toTopOf="@+id/eventRulesButton"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupEvent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,20 +21,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Rules"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/toStudyFragmentButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupEvent" />
 
     <RadioGroup
         android:id="@+id/radioGroupEvent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/eventRulesButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameOfEvent">
+        app:layout_constraintTop_toBottomOf="@+id/nameOfEvent"
+        tools:layout_editor_absoluteX="130dp">
 
         <RadioButton
             android:id="@+id/aboutEventRadioButton"
@@ -55,10 +57,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Information"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eventRulesButton" />
+        app:layout_constraintTop_toBottomOf="@+id/toStudyFragmentButton" />
 
     <Button
         android:id="@+id/toStudyFragmentButton"
