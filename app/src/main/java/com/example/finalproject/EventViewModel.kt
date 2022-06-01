@@ -20,6 +20,10 @@ class EventViewModel: ViewModel() {
         get() = _eventAboutInfo
 
 
+    private val _infoPackage = MutableLiveData(0)
+    val infoPackage: LiveData<Int>
+        get() = _infoPackage
+
     fun changeName(name: String) {
         _eventTitle.value = name
     }
@@ -135,6 +139,32 @@ class EventViewModel: ViewModel() {
         }
     }
     fun moreInfo(){
+        if ((eventTitle.value ?: 0).equals("Bridge")) {
+            _infoPackage.value = 1
+        }
+        else if ((eventTitle.value ?: 0).equals("Gravity Vehicle")) {
+            _infoPackage.value = 2
+        }
+        else if ((eventTitle.value ?: 0).equals("It's About Time")) {
+            _infoPackage.value = 3
+
+        }
+        else if ((eventTitle.value ?: 0).equals("Ornithology")) {
+            _infoPackage.value = 4
+
+        }
+        else if ((eventTitle.value ?: 0).equals("Ping-Pong Parachute")) {
+            _infoPackage.value = 5
+
+        }
+        else if ((eventTitle.value ?: 0).equals("Trajectory")) {
+            _infoPackage.value = 6
+
+        }
+        else if ((eventTitle.value ?: 0).equals("Wifi Lab")) {
+            _infoPackage.value = 7
+
+        }
 
     }
 }
