@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.media.AudioAttributes
 import android.media.SoundPool
+import android.view.animation.AnimationUtils
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.example.finalproject.databinding.FragmentEventStudyMaterialsBinding
@@ -35,6 +36,9 @@ class EventStudyMaterialsFragment : Fragment() {
         viewModel.changeName(args.eventtitle)
 
         viewModel.moreInfo()
+
+
+        binding.studyFragment.startAnimation(AnimationUtils.loadAnimation(this.context, androidx.appcompat.R.anim.abc_slide_in_bottom))
 
 
         var audioAttributes = AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_MEDIA).setContentType(AudioAttributes.CONTENT_TYPE_MUSIC).build()

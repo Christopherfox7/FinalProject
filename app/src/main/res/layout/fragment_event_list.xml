@@ -9,8 +9,7 @@
     android:paddingLeft="4dp"
     android:paddingTop="4dp"
     android:paddingBottom="10dp"
-    tools:context=".EventListFragment"
-    >
+    tools:context=".EventListFragment">
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -30,9 +29,10 @@
         android:id="@+id/extraInfoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#1AD522"
         android:paddingBottom="10dp"
         android:text="Additional Info About Science Olympiad"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonToQuestionare"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
@@ -41,6 +41,7 @@
         android:id="@+id/buttonToQuestionare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#1AD522"
         android:text="What event is best for you?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -23,7 +23,7 @@ class EventListFragment : Fragment() {
         _binding = FragmentEventListBinding.inflate(inflater, container, false)
         val rootView = binding.root
 
-        binding.eventListFragment.startAnimation(AnimationUtils.loadAnimation(this.context, androidx.appcompat.R.anim.abc_slide_out_top))
+        binding.eventListFragment.startAnimation(AnimationUtils.loadAnimation(this.context, androidx.appcompat.R.anim.abc_slide_in_bottom))
 
         val events = listOf<String>("Anatomy and Physiology", "Astronomy", "Bridge", "Cell Biology", "Chem Lab","Codebusters", "Detector Building",
             "Dynamic Planet", "Environmental Chemistry", "Gravity Vehicle", "Green Generation", "It's About Time",

@@ -1,6 +1,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/resourcesFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
@@ -11,7 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Event Name"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroupEvent"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/eventRulesButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,37 +22,13 @@
         android:id="@+id/eventRulesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#1AD522"
         android:text="Rules"
         app:layout_constraintBottom_toTopOf="@+id/toStudyFragmentButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroupEvent" />
+        app:layout_constraintTop_toBottomOf="@+id/nameOfEvent" />
 
-    <RadioGroup
-        android:id="@+id/radioGroupEvent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/eventRulesButton"
-        app:layout_constraintTop_toBottomOf="@+id/nameOfEvent"
-        tools:layout_editor_absoluteX="130dp">
-
-        <RadioButton
-            android:id="@+id/aboutEventRadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="8dp"
-            android:text="About" />
-
-        <RadioButton
-            android:id="@+id/eventRulesRadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingEnd="8dp"
-            android:text="Rules" />
-    </RadioGroup>
 
     <TextView
         android:id="@+id/eventInfoTextView"
@@ -67,6 +45,7 @@
         android:id="@+id/toStudyFragmentButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#1AD522"
         android:text="Additional Event Resources"
         app:layout_constraintBottom_toTopOf="@+id/eventInfoTextView"
         app:layout_constraintEnd_toEndOf="parent"

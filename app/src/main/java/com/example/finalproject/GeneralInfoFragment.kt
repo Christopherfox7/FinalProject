@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import com.example.finalproject.databinding.FragmentEventListBinding
 import com.example.finalproject.databinding.FragmentGeneralInfoBinding
 
@@ -21,6 +22,8 @@ class GeneralInfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentGeneralInfoBinding.inflate(inflater, container, false)
+        binding.generalInfoFragment.startAnimation(AnimationUtils.loadAnimation(this.context, androidx.appcompat.R.anim.abc_slide_in_bottom))
+
 
         binding.phoneButton.setOnClickListener { dialPhoneNumber("6307921251") }
 
@@ -54,10 +57,9 @@ class GeneralInfoFragment : Fragment() {
             putExtra(Intent.EXTRA_SUBJECT, subject)
 
         }
-        //        binding.emailButton.setOnClickListener{composeEmail("info@sofworld.org", "text")}
-        //  if (intent.resolveActivity(packageManager) != null) {
+
         startActivity(intent)
-        //  }
+
     }
 
     override fun onDestroyView() {

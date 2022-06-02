@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.example.finalproject.databinding.FragmentEventResourcesBinding
@@ -32,6 +33,8 @@ class EventResourcesFragment : Fragment() {
        viewModel.changeName(args.eventName)
 
         viewModel.addLink()
+
+        binding.resourcesFragment.startAnimation(AnimationUtils.loadAnimation(this.context, androidx.appcompat.R.anim.abc_slide_in_bottom))
 
 
         if(viewModel.eventTitle.value.toString().equals("Astronomy")){
@@ -76,9 +79,7 @@ class EventResourcesFragment : Fragment() {
 
         binding.eventRulesButton.setOnClickListener { openRulesPage(viewModel.eventRulesLink.value.toString()) }
 
-        binding.aboutEventRadioButton.setOnClickListener{editEventText()}
 
-        binding.eventRulesRadioButton.setOnClickListener{editEventText()}
 
         binding.toStudyFragmentButton.setOnClickListener{binding.root.findNavController().navigate(EventResourcesFragmentDirections.actionEventResourcesFragmentToEventStudyMaterialsFragment(viewModel.eventTitle.value.toString()))}
 
@@ -92,9 +93,7 @@ class EventResourcesFragment : Fragment() {
 
     }
 
-    fun editEventText(){
 
-    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
