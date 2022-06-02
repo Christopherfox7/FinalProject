@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_welcomeFragment_to_eventListFragment"
             app:destination="@id/eventListFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
     </fragment>
     <fragment
         android:id="@+id/eventListFragment"
@@ -60,4 +63,9 @@
         android:name="com.example.finalproject.QuestionareFragment"
         android:label="fragment_questionare"
         tools:layout="@layout/fragment_questionare" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.finalproject.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
 </navigation>
